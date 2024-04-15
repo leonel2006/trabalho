@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Idade</title>
+    <!-- Adicionando Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Verificação de Idade</h2>
+        <div class="form-group">
+            <label for="idade">Digite sua idade:</label>
+            <input type="text" class="form-control" id="idade">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="verificarIdade()">Verificar</button>
+        <p class="mt-3" id="resultado"></p>
+    </div>
+
+    <!-- Adicionando Bootstrap JS (opcional, apenas se você precisar de funcionalidades específicas do Bootstrap) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function verificarIdade() {
+            var idadeInput = document.getElementById("idade").value;
+            var idade = parseInt(idadeInput);
+
+            if (isNaN(idade)) {
+                alert("Por favor, insira uma idade válida.");
+                return;
+            }
+
+            if (idade >= 18) {
+                document.getElementById("resultado").textContent = "Você é maior de idade.";
+            } else {
+                document.getElementById("resultado").textContent = "Você é menor de idade.";
+            }
+        }
+    </script>
+</body>
+</html>
